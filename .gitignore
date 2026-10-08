@@ -6,6 +6,7 @@ vendor/
 *.log
 .db-restored
 .DS_Store
+*.out
 
 # Local generated/runtime data
 runtime/data/

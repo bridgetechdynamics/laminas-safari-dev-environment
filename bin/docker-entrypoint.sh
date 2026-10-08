@@ -20,6 +20,10 @@ if [[ ! -e public/assets && -d assets ]]; then
     ln -s /var/www/html/assets public/assets
 fi
 
+# Named volumes are created as root by Docker. Apache runs as www-data and
+# must be able to write Laminas cache and generated document files.
+chown -R www-data:www-data data/cache data/documents
+
 if [[ ! -f vendor/autoload.php || composer.lock -nt vendor/autoload.php || composer.json -nt vendor/autoload.php ]]; then
     composer install --no-interaction --prefer-dist --optimize-autoloader
 fi
@@ -29,4 +33,3 @@ if [[ -x bin/clear-config-cache.php || -f bin/clear-config-cache.php ]]; then
 fi
 
 exec "$@"
-
