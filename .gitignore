@@ -1,1 +1,16 @@
+.env
 input/
+app/
+runtime/local.php
+vendor/
+*.log
+.db-restored
+.DS_Store
+
+# Local generated/runtime data
+runtime/data/
+
+# IDE and OS files
+.idea/
+.vscode/
+

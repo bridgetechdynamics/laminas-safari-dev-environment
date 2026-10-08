@@ -1,0 +1,9 @@
+.git
+.env
+input/
+app/
+runtime/local.php
+vendor/
+*.log
+.DS_Store
+
