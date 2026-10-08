@@ -1,7 +1,6 @@
 .env
 input/
 app/
-runtime/local.php
 vendor/
 *.log
 .db-restored
@@ -14,4 +13,3 @@ runtime/data/
 # IDE and OS files
 .idea/
 .vscode/
-

@@ -39,7 +39,7 @@ changing the local runtime contract.
 laminas-safari-dev-environment/
 ├── app/                  # extracted or checked-out source; ignored by Git
 ├── input/                # private archive and database payloads; ignored
-├── runtime/              # local generated configuration; ignored
+├── runtime/              # secret-free runtime configuration template
 ├── compose.yaml          # editable-source default stack
 ├── compose.image.yaml    # planned optional pinned-image override/profile
 ├── Dockerfile.dev        # development runtime with PHP/Apache dependencies
@@ -71,10 +71,10 @@ The default Compose stack contains:
    mounted from `app/`.
 
 The application container receives database and service settings through
-environment variables. A generated local Laminas override will map the
-application database connection to `db`, avoiding the archive’s default
-`localhost` setting. Configuration cache clearing runs after configuration
-changes and during startup when required.
+environment variables. The tracked, secret-free runtime template is mounted
+as the Laminas local override and maps the application database connection to
+`db`, avoiding the archive’s default `localhost` setting. Configuration cache
+clearing runs after configuration changes and during startup when required.
 
 The source mount must not obscure runtime dependencies or writable directories.
 Composer dependencies, cache, generated documents, and other required writable

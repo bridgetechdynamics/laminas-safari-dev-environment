@@ -36,6 +36,10 @@ input/horsesns_safari-dev.sql.gz
 
 They are ignored by Git and must not be uploaded to the repository.
 
+The runtime configuration template is committed because it contains only
+environment-variable lookups. Actual passwords and service keys remain in the
+untracked `.env` file.
+
 ## 3. Start the application
 
 ```bash
@@ -99,4 +103,3 @@ bash bin/reset-local.sh
 
 The reset command displays its target and requires typing `RESET`. Afterward,
 run `bin/start.sh` and explicitly restore the database if appropriate.
-
