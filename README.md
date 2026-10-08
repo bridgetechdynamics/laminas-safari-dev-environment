@@ -69,4 +69,9 @@ commands.
 See [DESIGN.md](DESIGN.md) and [docs/DATABASE.md](docs/DATABASE.md) for the
 current contract and database handling rules. External service behavior is
 documented in [docs/SERVICES.md](docs/SERVICES.md), and common failures are
-covered in [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
+covered in [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md). Current POC
+test status is tracked in [docs/POC_VALIDATION.md](docs/POC_VALIDATION.md).
+
+Repository ownership and the future GitHub migration are documented in
+[docs/REPOSITORY_BOUNDARIES.md](docs/REPOSITORY_BOUNDARIES.md) and
+[docs/SOURCE_REPOSITORY_READINESS.md](docs/SOURCE_REPOSITORY_READINESS.md).
