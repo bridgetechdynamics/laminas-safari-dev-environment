@@ -28,6 +28,8 @@ RUN apt-get update \
         xml \
         zip \
     && a2enmod rewrite \
+    && printf '%s\n' 'ServerName localhost' > /etc/apache2/conf-available/servername.conf \
+    && a2enconf servername \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -39,4 +41,3 @@ RUN chmod +x /usr/local/bin/laminas-dev-entrypoint
 WORKDIR /var/www/html
 ENTRYPOINT ["/usr/local/bin/laminas-dev-entrypoint"]
 CMD ["apache2-foreground"]
-
