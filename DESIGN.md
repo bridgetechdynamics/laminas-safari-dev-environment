@@ -41,7 +41,7 @@ laminas-safari-dev-environment/
 ├── input/                # private archive and database payloads; ignored
 ├── runtime/              # local generated configuration; ignored
 ├── compose.yaml          # editable-source default stack
-├── compose.image.yaml    # optional pinned-image override/profile
+├── compose.image.yaml    # planned optional pinned-image override/profile
 ├── Dockerfile.dev        # development runtime with PHP/Apache dependencies
 ├── .env.example          # safe variable names and local defaults
 ├── .gitignore
@@ -130,6 +130,9 @@ The editable-source Compose stack is the default. An optional image override
 will require an explicit immutable ECR image reference, preferably a full
 deployment commit SHA. It will not use `latest`.
 
+This workflow is planned but not part of the currently verified POC. The local
+editable-source workflow should remain stable while it is added.
+
 The two modes share the MariaDB and environment contract where possible, but
 the image mode will not mount editable source and will be documented as a
 packaged-image comparison workflow rather than a coding workflow.
@@ -146,3 +149,15 @@ The first implementation should verify:
 - Logs and an application shell are accessible.
 - Reset removes only local project data and can recreate the stack.
 - No input payload, `.env`, runtime secret, or generated data is tracked.
+
+## Current verification status
+
+The local POC has been verified on Docker Desktop for:
+
+- application startup and homepage access;
+- editable host source changes appearing without an image rebuild;
+- login and database-backed behavior;
+- database restore;
+- application and database logs;
+- application shell access; and
+- destructive reset followed by clean recreation.

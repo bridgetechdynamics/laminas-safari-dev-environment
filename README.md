@@ -8,6 +8,10 @@ workflow.
 
 ## Quick start
 
+Prerequisites: Docker Desktop must be installed and running. On Windows 11,
+use Docker Desktop with the WSL 2 backend and run these commands from the WSL
+terminal.
+
 From the project root:
 
 ```bash
@@ -29,6 +33,8 @@ bash bin/restore-database.sh
 The dump is currently considered private and not approved for distribution
 until it has completed a sensitive-data review.
 
+For the complete onboarding procedure, see [Getting started](docs/GETTING_STARTED.md).
+
 ## Common commands
 
 ```bash
@@ -48,6 +54,10 @@ The editable workflow mounts `app/` into the application container. Source
 edits should be visible without rebuilding the image; dependency changes may
 require restarting the stack or rebuilding it.
 
+Host files are edited under `app/`. The container path for the same source is
+`/var/www/html`; use `bash bin/shell.sh` only for inspection or container-side
+commands.
+
 ## Safety boundaries
 
 - Never put `.env`, database dumps, private keys, or service credentials in Git.
@@ -57,5 +67,6 @@ require restarting the stack or rebuilding it.
 - MariaDB is available only inside the local Compose network.
 
 See [DESIGN.md](DESIGN.md) and [docs/DATABASE.md](docs/DATABASE.md) for the
-current contract and database handling rules.
-
+current contract and database handling rules. External service behavior is
+documented in [docs/SERVICES.md](docs/SERVICES.md), and common failures are
+covered in [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
