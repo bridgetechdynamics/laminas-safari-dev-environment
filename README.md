@@ -44,6 +44,8 @@ bash bin/logs.sh app
 bash bin/logs.sh db
 bash bin/shell.sh
 bash bin/reset-local.sh
+bash bin/maintenance-on.sh
+bash bin/maintenance-off.sh
 ```
 
 `reset-local.sh` deletes only this project’s Compose volumes and requires an
@@ -71,6 +73,7 @@ current contract and database handling rules. External service behavior is
 documented in [docs/SERVICES.md](docs/SERVICES.md), and common failures are
 covered in [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md). Current POC
 test status is tracked in [docs/POC_VALIDATION.md](docs/POC_VALIDATION.md).
+Maintenance mode is documented in [docs/MAINTENANCE.md](docs/MAINTENANCE.md).
 
 Repository ownership and the future GitHub migration are documented in
 [docs/REPOSITORY_BOUNDARIES.md](docs/REPOSITORY_BOUNDARIES.md) and
