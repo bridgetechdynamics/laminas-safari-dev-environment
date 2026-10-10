@@ -52,6 +52,7 @@ services:
       - app-vendor:/var/www/html/vendor
       - app-cache:/var/www/html/data/cache
       - app-documents:/var/www/html/data/documents
+      - ./app/maintenance.php:/var/www/html/public/maintenance.php:ro
       # This template is tracked and contains no secrets; values come from env.
       - ./runtime/local.php.template:/var/www/html/config/autoload/local.php:ro
     healthcheck:
